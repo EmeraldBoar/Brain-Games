@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +14,9 @@
   "keywords": [
     "js"
   ],
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "author": "Kozlov Konstantin <kozlovkv174@gmail.com>",
   "license": "ISC",
   "bugs": {
