@@ -1,0 +1,1 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/80d65ca0b309481b7861/maintainability)](https://codeclimate.com/github/EmeraldBoar/frontend-project-lvl1/maintainability)
