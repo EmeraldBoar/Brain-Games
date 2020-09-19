@@ -1,1 +1,2 @@
+[![Node CI](https://https://github.com/EmeraldBoar/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://https://github.com/EmeraldBoar/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/80d65ca0b309481b7861/maintainability)](https://codeclimate.com/github/EmeraldBoar/frontend-project-lvl1/maintainability)
