@@ -1,27 +1,33 @@
 import getRandomNum from '../utils/random.js';
 
-const calcGame = (maxNum = 1000) => {
-  const operators = {
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '*': (a, b) => a * b,
-  };
+const game = (maxNum = 100) => {
+  const operators = ['+', '-', '*'];
 
   const firstNum = getRandomNum(maxNum);
   const secondNum = getRandomNum(maxNum);
 
-  const operatorsArr = Object.keys(operators);
-  const randomOperator = operatorsArr[getRandomNum(operatorsArr.length - 1)];
-  const operatorMethod = operators[randomOperator];
+  const randomOperator = operators[getRandomNum(operators.length - 1)];
 
-  return [
-    {
-      conditionsOfTheGame: 'What is the result of the expression?',
-    },
-    {
-      expression: `${firstNum} ${randomOperator} ${secondNum}`,
-      correctAnswer: String(operatorMethod(firstNum, secondNum)),
-    },
-  ];
+  const result = {
+    expression: `${firstNum} ${randomOperator} ${secondNum}`,
+    correctAnswer: '',
+  };
+
+  switch (randomOperator) {
+    case '+': result.correctAnswer = String(firstNum + secondNum);
+      break;
+    case '-': result.correctAnswer = String(firstNum - secondNum);
+      break;
+    case '*': result.correctAnswer = String(firstNum * secondNum);
+      break;
+    default:
+  }
+  return result;
 };
-export default calcGame;
+
+const gameData = {
+  rules: 'What is the result of the expression?',
+  game,
+};
+
+export default gameData;

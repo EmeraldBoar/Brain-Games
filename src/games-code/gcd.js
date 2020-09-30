@@ -1,6 +1,6 @@
 import getRandomNum from '../utils/random.js';
 
-const gcdGame = (maxNum = 1000) => {
+const game = (maxNum = 100) => {
   let firstNum = getRandomNum(maxNum);
   let secondNum = getRandomNum(maxNum);
 
@@ -13,15 +13,15 @@ const gcdGame = (maxNum = 1000) => {
       firstNum -= secondNum;
     }
   }
-  return [
-    {
-      conditionsOfTheGame: 'Find the greatest common divisor of given numbers.',
-    },
-    {
-      expression,
-      correctAnswer: String(secondNum),
-    },
-  ];
+  return {
+    expression,
+    correctAnswer: String(secondNum),
+  };
 };
 
-export default gcdGame;
+const gameData = {
+  rules: 'Find the greatest common divisor of given numbers.',
+  game,
+};
+
+export default gameData;

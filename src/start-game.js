@@ -1,20 +1,20 @@
 import readLineSync from 'readline-sync';
 
 const NUMBER_OF_ROUNDS = 3;
-const MAX_NUMBER = 100;
+const MAX_NUMBER = 100000;
 
-const startGame = (game) => {
+const startGame = (data) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readLineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  const gameTitle = game()[0];
-  console.log(gameTitle.conditionsOfTheGame);
+  const gameRules = data.rules;
+  console.log(gameRules);
 
   let count = 0;
   for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
-    const gameData = game(MAX_NUMBER)[1];
+    const gameData = data.game(MAX_NUMBER);
 
     console.log(`Question: ${gameData.expression}`);
 
