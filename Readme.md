@@ -1,3 +1,18 @@
+# Welcome to Brain Games
+## Installation
+
+```sh
+$ make install
+```
+## Games
+| Game | Description | Start
+| ------ | ------ | ------ |
+| Even | Answer "yes" if the number is even, otherwise answer "no". | $ make brain-even |
+| Calculator | What is the result of the expression? | $ make brain-calc |
+| GCD | Find the greatest common divisor of given numbers. | $ make brain-gcd |
+| Progression | What number is missing in the progression? | $ make brain-progression |
+| Prime | Answer "yes" if given number is prime. Otherwise answer "no". | $ make brain-prime |
+
 [![Node CI](https://github.com/EmeraldBoar/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/EmeraldBoar/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/80d65ca0b309481b7861/maintainability)](https://codeclimate.com/github/EmeraldBoar/frontend-project-lvl1/maintainability)
 
