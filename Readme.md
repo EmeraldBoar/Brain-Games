@@ -1,4 +1,8 @@
 # Welcome to Brain Games
+
+[![Node CI](https://github.com/EmeraldBoar/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/EmeraldBoar/frontend-project-lvl1/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/80d65ca0b309481b7861/maintainability)](https://codeclimate.com/github/EmeraldBoar/frontend-project-lvl1/maintainability)
+
 ## Installation
 
 ```sh
@@ -13,8 +17,6 @@ $ make install
 | Progression | What number is missing in the progression? | $ make brain-progression |
 | Prime | Answer "yes" if given number is prime. Otherwise answer "no". | $ make brain-prime |
 
-[![Node CI](https://github.com/EmeraldBoar/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/EmeraldBoar/frontend-project-lvl1/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/80d65ca0b309481b7861/maintainability)](https://codeclimate.com/github/EmeraldBoar/frontend-project-lvl1/maintainability)
 
 # Игра: "Проверка на чётность"
 [![asciicast](https://asciinema.org/a/yRV2Plc7fQQkWPZ5EKfeddjvG.svg)](https://asciinema.org/a/yRV2Plc7fQQkWPZ5EKfeddjvG)
