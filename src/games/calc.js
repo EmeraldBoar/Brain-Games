@@ -1,12 +1,13 @@
-import getRandomNum from '../utils/random.js';
+import { getRandomNumber } from '../utils/random.js';
 
-const game = (maxNum = 100) => {
+const game = () => {
+  const MAX_NUMBER = 100;
   const operators = ['+', '-', '*'];
 
-  const firstNum = getRandomNum(maxNum);
-  const secondNum = getRandomNum(maxNum);
+  const firstNum = getRandomNumber(MAX_NUMBER);
+  const secondNum = getRandomNumber(MAX_NUMBER);
 
-  const randomOperator = operators[getRandomNum(operators.length - 1)];
+  const randomOperator = operators[getRandomNumber(operators.length - 1)];
 
   const result = {
     expression: `${firstNum} ${randomOperator} ${secondNum}`,
@@ -14,11 +15,14 @@ const game = (maxNum = 100) => {
   };
 
   switch (randomOperator) {
-    case '+': result.correctAnswer = String(firstNum + secondNum);
+    case '+':
+      result.correctAnswer = String(firstNum + secondNum);
       break;
-    case '-': result.correctAnswer = String(firstNum - secondNum);
+    case '-':
+      result.correctAnswer = String(firstNum - secondNum);
       break;
-    case '*': result.correctAnswer = String(firstNum * secondNum);
+    case '*':
+      result.correctAnswer = String(firstNum * secondNum);
       break;
     default:
   }
@@ -26,7 +30,7 @@ const game = (maxNum = 100) => {
 };
 
 const gameData = {
-  rules: 'What is the result of the expression?',
+  description: 'What is the result of the expression?',
   game,
 };
 

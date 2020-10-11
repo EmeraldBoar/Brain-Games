@@ -1,10 +1,11 @@
-import getRandomNum from '../utils/random.js';
+import { getRandomNumber } from '../utils/random.js';
 
-const game = (maxNum = 100) => {
+const game = () => {
+  const MAX_NUMBER = 100;
   const MAX_STEP = 100;
   const QUANTITY = 10;
-  const startProgression = getRandomNum(maxNum);
-  const randomStep = getRandomNum(MAX_STEP);
+  const startProgression = getRandomNumber(MAX_NUMBER);
+  const randomStep = getRandomNumber(MAX_STEP);
 
   let numberProgression = startProgression;
 
@@ -15,7 +16,7 @@ const game = (maxNum = 100) => {
     numberProgression += randomStep;
   }
 
-  const randomHiddenIndex = getRandomNum(numbers.length - 1);
+  const randomHiddenIndex = getRandomNumber(numbers.length - 1);
   const correctAnswer = String(numbers[randomHiddenIndex]);
   numbers[randomHiddenIndex] = '..';
 
@@ -26,7 +27,7 @@ const game = (maxNum = 100) => {
 };
 
 const gameData = {
-  rules: 'What number is missing in the progression?',
+  description: 'What number is missing in the progression?',
   game,
 };
 

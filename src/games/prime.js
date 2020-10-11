@@ -1,7 +1,8 @@
-import getRandomNum from '../utils/random.js';
+import { getRandomNumber } from '../utils/random.js';
 
-const game = (maxNum = 100) => {
-  const randomNum = getRandomNum(maxNum);
+const game = () => {
+  const MAX_NUMBER = 100;
+  const randomNum = getRandomNumber(MAX_NUMBER);
 
   const result = {
     expression: randomNum,
@@ -35,7 +36,7 @@ const game = (maxNum = 100) => {
 };
 
 const gameData = {
-  rules: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+  description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
   game,
 };
 
