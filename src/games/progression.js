@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const game = () => {
+const createsRound = () => {
   const MAX_NUMBER = 100;
   const MAX_STEP = 100;
   const QUANTITY = 10;
@@ -28,7 +28,7 @@ const game = () => {
 
 const gameData = {
   description: 'What number is missing in the progression?',
-  game,
+  createsRound,
 };
 
 export default gameData;

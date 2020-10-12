@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const game = () => {
+const createsRound = () => {
   const MAX_NUMBER = 100;
   const operators = ['+', '-', '*'];
 
@@ -31,7 +31,7 @@ const game = () => {
 
 const gameData = {
   description: 'What is the result of the expression?',
-  game,
+  createsRound,
 };
 
 export default gameData;

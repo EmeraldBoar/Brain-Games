@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const game = () => {
+const createsRound = () => {
   const MAX_NUMBER = 100;
   let firstNum = getRandomNumber(MAX_NUMBER);
   let secondNum = getRandomNumber(MAX_NUMBER);
@@ -22,7 +22,7 @@ const game = () => {
 
 const gameData = {
   description: 'Find the greatest common divisor of given numbers.',
-  game,
+  createsRound,
 };
 
 export default gameData;
