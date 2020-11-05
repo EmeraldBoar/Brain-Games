@@ -3,15 +3,15 @@
 
 # Welcome to Brain Games
 
-Brain Games is a set of five console games, built on the principle of popular mobile brain training applications. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered to be completed. Wrong answers end the game and offer to play it again
+Brain Games is a set of five console games, built on the principle of popular mobile brain training applications. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered to be completed. Wrong answers end the game and offer to play it again.
 
 ## Installation
 
-Install the latest Node.js to the system globally [Node.js](https://nodejs.org/)
+Install the latest [Node.js](https://nodejs.org/) to the system globally.
 
 To install a package on a system as a utility:
 - Open your terminal.
-- Go to project directory
+- Go to project directory.
 - Run command:
 	```sh
 	$ npm link
