@@ -1,24 +1,16 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const createsRound = () => {
-  const MAX_NUMBER = 100;
-  const randomNum = getRandomNumber(MAX_NUMBER);
-
-  const result = {
-    expression: randomNum,
-    correctAnswer: '',
-  };
-
+const calculatingTheAnswer = (randomNumber) => {
   let isPrime = false;
 
-  if (randomNum % 2 === 0) {
+  if (randomNumber % 2 === 0) {
     isPrime = false;
-  } else if (randomNum === 2 || randomNum === 1) {
+  } else if (randomNumber === 2 || randomNumber === 1) {
     isPrime = true;
   } else {
-    const randomNumSqrt = Math.sqrt(randomNum);
+    const randomNumSqrt = Math.sqrt(randomNumber);
     for (let i = 3; i < randomNumSqrt; i += 2) {
-      if (randomNum % i === 0) {
+      if (randomNumber % i === 0) {
         isPrime = false;
         break;
       } else {
@@ -28,16 +20,26 @@ const createsRound = () => {
   }
 
   if (isPrime) {
-    result.correctAnswer = 'yes';
-  } else {
-    result.correctAnswer = 'no';
+    return 'yes';
   }
+  return 'no';
+};
+
+const createRound = () => {
+  const MIN_NUMBER = 1;
+  const MAX_NUMBER = 100;
+  const randomNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+
+  const result = {
+    expression: randomNumber,
+    correctAnswer: calculatingTheAnswer(randomNumber),
+  };
   return result;
 };
 
 const gameData = {
   description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-  createsRound,
+  createRound,
 };
 
 export default gameData;

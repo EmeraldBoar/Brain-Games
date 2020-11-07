@@ -1,11 +1,12 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const createsRound = () => {
+const createRound = () => {
+  const MIN_NUMBER = 1;
   const MAX_NUMBER = 100;
   const MAX_STEP = 100;
   const QUANTITY = 10;
-  const startProgression = getRandomNumber(MAX_NUMBER);
-  const randomStep = getRandomNumber(MAX_STEP);
+  const startProgression = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+  const randomStep = getRandomNumber(MIN_NUMBER, MAX_STEP);
 
   let numberProgression = startProgression;
 
@@ -16,7 +17,7 @@ const createsRound = () => {
     numberProgression += randomStep;
   }
 
-  const randomHiddenIndex = getRandomNumber(numbers.length - 1);
+  const randomHiddenIndex = getRandomNumber(MIN_NUMBER, numbers.length - 1);
   const correctAnswer = String(numbers[randomHiddenIndex]);
   numbers[randomHiddenIndex] = '..';
 
@@ -28,7 +29,7 @@ const createsRound = () => {
 
 const gameData = {
   description: 'What number is missing in the progression?',
-  createsRound,
+  createRound,
 };
 
 export default gameData;

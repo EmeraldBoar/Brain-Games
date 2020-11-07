@@ -1,37 +1,42 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const createsRound = () => {
-  const MAX_NUMBER = 100;
-  const operators = ['+', '-', '*'];
-
-  const firstNum = getRandomNumber(MAX_NUMBER);
-  const secondNum = getRandomNumber(MAX_NUMBER);
-
-  const randomOperator = operators[getRandomNumber(operators.length - 1)];
-
-  const result = {
-    expression: `${firstNum} ${randomOperator} ${secondNum}`,
-    correctAnswer: '',
-  };
-
-  switch (randomOperator) {
+const calculatingTheAnswer = (operator, firstNumber, secondNumber) => {
+  let answer = '';
+  switch (operator) {
     case '+':
-      result.correctAnswer = String(firstNum + secondNum);
+      answer = String(firstNumber + secondNumber);
       break;
     case '-':
-      result.correctAnswer = String(firstNum - secondNum);
+      answer = String(firstNumber - secondNumber);
       break;
     case '*':
-      result.correctAnswer = String(firstNum * secondNum);
+      answer = String(firstNumber * secondNumber);
       break;
     default:
   }
+  return answer;
+};
+
+const createRound = () => {
+  const MIN_NUMBER = 0;
+  const MAX_NUMBER = 100;
+  const operators = ['+', '-', '*'];
+
+  const firstNum = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+  const secondNum = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+
+  const randomOperator = operators[getRandomNumber(MIN_NUMBER, operators.length - 1)];
+
+  const result = {
+    expression: `${firstNum} ${randomOperator} ${secondNum}`,
+    correctAnswer: calculatingTheAnswer(randomOperator, firstNum, secondNum),
+  };
   return result;
 };
 
 const gameData = {
   description: 'What is the result of the expression?',
-  createsRound,
+  createRound,
 };
 
 export default gameData;

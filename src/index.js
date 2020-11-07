@@ -10,25 +10,24 @@ const manageGame = (game) => {
 
   console.log(game.description);
 
-  let countRounds = 0;
+  let roundsCount = 0;
 
-  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
-    const gameData = game.createsRound();
-
+  while (roundsCount < NUMBER_OF_ROUNDS) {
+    const gameData = game.createRound();
     console.log(`Question: ${gameData.expression}`);
 
-    const answerUser = readLineSync.question('Your answer ');
+    const userAnswer = readLineSync.question('Your answer ');
 
-    if (answerUser === gameData.correctAnswer) {
+    if (userAnswer === gameData.correctAnswer) {
+      roundsCount += 1;
       console.log('Correct');
-      countRounds += 1;
     } else {
-      console.log(`"${answerUser}" is wrong answer ;(. Correct answer was "${gameData.correctAnswer}".`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${gameData.correctAnswer}".`);
       break;
     }
   }
 
-  if (countRounds === NUMBER_OF_ROUNDS) {
+  if (roundsCount === NUMBER_OF_ROUNDS) {
     console.log(`Congratulations, ${userName}!`);
   } else {
     console.log(`Let's try again, ${userName}`);

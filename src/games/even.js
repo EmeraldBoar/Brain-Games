@@ -1,18 +1,23 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const createsRound = () => {
+const calculatingTheAnswer = (randomNumber) => {
+  const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
+  return correctAnswer;
+};
+
+const createRound = () => {
+  const MIN_NUMBER = 1;
   const MAX_NUMBER = 100;
-  const randomNum = getRandomNumber(1, MAX_NUMBER);
-  const correctAnswer = (randomNum % 2 === 0) ? 'yes' : 'no';
+  const randomNum = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
   return {
     expression: randomNum,
-    correctAnswer,
+    correctAnswer: calculatingTheAnswer(randomNum),
   };
 };
 
 const gameData = {
   description: 'Answer "yes" if the number is even, otherwise answer "no".',
-  createsRound,
+  createRound,
 };
 
 export default gameData;
