@@ -13,16 +13,16 @@ const manageGame = (game) => {
   let roundsCount = 0;
 
   while (roundsCount < NUMBER_OF_ROUNDS) {
-    const gameData = game.createRound();
-    console.log(`Question: ${gameData.expression}`);
+    const { expression, correctAnswer } = game.createRound();
+    console.log(`Question: ${expression}`);
 
     const userAnswer = readLineSync.question('Your answer ');
 
-    if (userAnswer === gameData.correctAnswer) {
+    if (userAnswer === correctAnswer) {
       roundsCount += 1;
       console.log('Correct');
     } else {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${gameData.correctAnswer}".`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       break;
     }
   }
