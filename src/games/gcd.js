@@ -15,9 +15,8 @@ const calculatingTheAnswer = (firstNumber, secondNumber) => {
 
 const createRound = () => {
   const MIN_NUMBER = 1;
-  const MAX_NUMBER = 100;
-  const firstNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
-  const secondNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+  const firstNumber = getRandomNumber(MIN_NUMBER);
+  const secondNumber = getRandomNumber(MIN_NUMBER);
 
   const expression = `${firstNumber} ${secondNumber}`;
 

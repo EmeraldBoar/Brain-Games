@@ -7,8 +7,7 @@ const calculatingTheAnswer = (randomNumber) => {
 
 const createRound = () => {
   const MIN_NUMBER = 1;
-  const MAX_NUMBER = 100;
-  const randomNum = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+  const randomNum = getRandomNumber(MIN_NUMBER);
   return {
     expression: randomNum,
     correctAnswer: calculatingTheAnswer(randomNum),
