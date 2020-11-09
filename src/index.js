@@ -1,11 +1,11 @@
-import readLineSync from 'readline-sync';
+import promptly from 'promptly';
 
 const NUMBER_OF_ROUNDS = 3;
 
-const manageGame = (game) => {
+const manageGame = async (game) => {
   console.log('Welcome to the Brain Games!');
 
-  const userName = readLineSync.question('May I have your name? ');
+  const userName = await promptly.prompt('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
   console.log(game.description);
@@ -16,7 +16,8 @@ const manageGame = (game) => {
     const { expression, correctAnswer } = game.createRound();
     console.log(`Question: ${expression}`);
 
-    const userAnswer = readLineSync.question('Your answer ');
+    // eslint-disable-next-line no-await-in-loop
+    const userAnswer = await promptly.prompt('Your answer ');
 
     if (userAnswer === correctAnswer) {
       roundsCount += 1;
