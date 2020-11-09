@@ -1,34 +1,27 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const calculatingTheAnswer = (randomNumber) => {
-  let isPrime = false;
+const isPrime = (randomNumber) => {
+  if (randomNumber < 2) {
+    return false;
+  }
 
-  if (randomNumber % 2 === 0) {
-    isPrime = false;
-  } else if (randomNumber === 2 || randomNumber === 1) {
-    isPrime = true;
-  } else {
-    const randomNumSqrt = Math.sqrt(randomNumber);
-    for (let i = 3; i < randomNumSqrt; i += 2) {
-      if (randomNumber % i === 0) {
-        isPrime = false;
-        break;
-      } else {
-        isPrime = true;
-      }
+  for (let i = 2; i <= Math.sqrt(randomNumber); i += 1) {
+    if (randomNumber % i === 0) {
+      return false;
     }
   }
 
-  if (isPrime) {
-    return 'yes';
-  }
-  return 'no';
+  return true;
+};
+
+const calculatingTheAnswer = (num) => {
+  const answer = isPrime(num) ? 'yes' : 'no';
+  return answer;
 };
 
 const createRound = () => {
   const MIN_NUMBER = 1;
-  const MAX_NUMBER = 100;
-  const randomNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+  const randomNumber = getRandomNumber(MIN_NUMBER);
 
   const result = {
     expression: randomNumber,
