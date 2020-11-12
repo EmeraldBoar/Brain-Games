@@ -1,20 +1,20 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const calculatingTheAnswer = (operator, firstNumber, secondNumber) => {
+const calculateTheAnswer = (operator, firstNumber, secondNumber) => {
   let answer = '';
   switch (operator) {
     case '+':
       answer = String(firstNumber + secondNumber);
-      break;
+      return answer;
     case '-':
       answer = String(firstNumber - secondNumber);
-      break;
+      return answer;
     case '*':
       answer = String(firstNumber * secondNumber);
-      break;
+      return answer;
     default:
+      return '';
   }
-  return answer;
 };
 
 const createRound = () => {
@@ -28,7 +28,7 @@ const createRound = () => {
 
   const result = {
     expression: `${firstNum} ${randomOperator} ${secondNum}`,
-    correctAnswer: calculatingTheAnswer(randomOperator, firstNum, secondNum),
+    correctAnswer: calculateTheAnswer(randomOperator, firstNum, secondNum),
   };
   return result;
 };

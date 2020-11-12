@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../utils/random.js';
 
-const calculatingTheAnswer = (firstNumber, secondNumber) => {
+const calculateTheAnswer = (firstNumber, secondNumber) => {
   let firstNum = firstNumber;
   let secondNum = secondNumber;
   while (firstNum !== secondNum) {
@@ -14,15 +14,14 @@ const calculatingTheAnswer = (firstNumber, secondNumber) => {
 };
 
 const createRound = () => {
-  const MIN_NUMBER = 1;
-  const firstNumber = getRandomNumber(MIN_NUMBER);
-  const secondNumber = getRandomNumber(MIN_NUMBER);
+  const firstNumber = getRandomNumber();
+  const secondNumber = getRandomNumber();
 
   const expression = `${firstNumber} ${secondNumber}`;
 
   return {
     expression,
-    correctAnswer: calculatingTheAnswer(firstNumber, secondNumber),
+    correctAnswer: calculateTheAnswer(firstNumber, secondNumber),
   };
 };
 

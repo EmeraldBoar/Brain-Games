@@ -4,7 +4,7 @@ const createRound = () => {
   const MIN_NUMBER = 1;
   const MAX_STEP = 100;
   const QUANTITY = 10;
-  const startProgression = getRandomNumber(MIN_NUMBER);
+  const startProgression = getRandomNumber();
   const randomStep = getRandomNumber(MIN_NUMBER, MAX_STEP);
 
   let numberProgression = startProgression;

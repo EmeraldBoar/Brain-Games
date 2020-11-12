@@ -14,18 +14,17 @@ const isPrime = (randomNumber) => {
   return true;
 };
 
-const calculatingTheAnswer = (num) => {
+const calculateTheAnswer = (num) => {
   const answer = isPrime(num) ? 'yes' : 'no';
   return answer;
 };
 
 const createRound = () => {
-  const MIN_NUMBER = 1;
-  const randomNumber = getRandomNumber(MIN_NUMBER);
+  const randomNumber = getRandomNumber();
 
   const result = {
     expression: randomNumber,
-    correctAnswer: calculatingTheAnswer(randomNumber),
+    correctAnswer: calculateTheAnswer(randomNumber),
   };
   return result;
 };
