@@ -2,7 +2,7 @@ import promptly from 'promptly';
 
 const NUMBER_OF_ROUNDS = 3;
 
-const manageGame = async (game) => {
+const launchGame = async (game) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = await promptly.prompt('May I have your name? ');
@@ -35,4 +35,4 @@ const manageGame = async (game) => {
   }
 };
 
-export default manageGame;
+export default launchGame;
