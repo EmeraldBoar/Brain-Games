@@ -1,17 +1,13 @@
-import { getRandomNumber } from '../utils/random.js';
+import { getRandomNumber } from '../random.js';
 
-const calculateTheAnswer = (operator, firstNumber, secondNumber) => {
-  let answer = '';
+const calculate = (operator, firstNumber, secondNumber) => {
   switch (operator) {
     case '+':
-      answer = String(firstNumber + secondNumber);
-      return answer;
+      return String(firstNumber + secondNumber);
     case '-':
-      answer = String(firstNumber - secondNumber);
-      return answer;
+      return String(firstNumber - secondNumber);
     case '*':
-      answer = String(firstNumber * secondNumber);
-      return answer;
+      return String(firstNumber * secondNumber);
     default:
       return '';
   }
@@ -28,7 +24,7 @@ const createRound = () => {
 
   const result = {
     expression: `${firstNum} ${randomOperator} ${secondNum}`,
-    correctAnswer: calculateTheAnswer(randomOperator, firstNum, secondNum),
+    correctAnswer: calculate(randomOperator, firstNum, secondNum),
   };
   return result;
 };
