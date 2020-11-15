@@ -1,12 +1,12 @@
-import { getRandomNumber } from '../utils/random.js';
+import { getRandomNumber } from '../random.js';
 
-const isPrime = (randomNumber) => {
-  if (randomNumber < 2) {
+const isPrime = (number) => {
+  if (number < 2) {
     return false;
   }
 
-  for (let i = 2; i <= Math.sqrt(randomNumber); i += 1) {
-    if (randomNumber % i === 0) {
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
+    if (number % i === 0) {
       return false;
     }
   }

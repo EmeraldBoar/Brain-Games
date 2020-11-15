@@ -1,27 +1,25 @@
-import { getRandomNumber } from '../utils/random.js';
+import { getRandomNumber } from '../random.js';
 
 const createRound = () => {
   const MIN_NUMBER = 1;
   const MAX_STEP = 100;
   const QUANTITY = 10;
-  const startProgression = getRandomNumber();
-  const randomStep = getRandomNumber(MIN_NUMBER, MAX_STEP);
+  const step = getRandomNumber(MIN_NUMBER, MAX_STEP);
+  let progressionElement = getRandomNumber();
 
-  let numberProgression = startProgression;
-
-  const numbers = [];
+  const progression = [];
 
   for (let i = 0; i < QUANTITY; i += 1) {
-    numbers.push(numberProgression);
-    numberProgression += randomStep;
+    progression.push(progressionElement);
+    progressionElement += step;
   }
 
-  const randomHiddenIndex = getRandomNumber(MIN_NUMBER, numbers.length - 1);
-  const correctAnswer = String(numbers[randomHiddenIndex]);
-  numbers[randomHiddenIndex] = '..';
+  const hiddenElementIndex = getRandomNumber(MIN_NUMBER, progression.length - 1);
+  const correctAnswer = String(progression[hiddenElementIndex]);
+  progression[hiddenElementIndex] = '..';
 
   return {
-    expression: numbers.join(' '),
+    expression: progression.join(' '),
     correctAnswer,
   };
 };
