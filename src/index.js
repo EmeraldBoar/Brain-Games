@@ -10,9 +10,9 @@ const launchGame = async (game) => {
 
   console.log(game.description);
 
-  let roundsCount = 0;
+  let numberOfCorrectAnswers = 0;
 
-  while (roundsCount < NUMBER_OF_ROUNDS) {
+  while (numberOfCorrectAnswers < NUMBER_OF_ROUNDS) {
     const { expression, correctAnswer } = game.createRound();
     console.log(`Question: ${expression}`);
 
@@ -20,7 +20,7 @@ const launchGame = async (game) => {
     const userAnswer = await promptly.prompt('Your answer ');
 
     if (userAnswer === correctAnswer) {
-      roundsCount += 1;
+      numberOfCorrectAnswers += 1;
       console.log('Correct');
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
@@ -28,7 +28,7 @@ const launchGame = async (game) => {
     }
   }
 
-  if (roundsCount === NUMBER_OF_ROUNDS) {
+  if (numberOfCorrectAnswers === NUMBER_OF_ROUNDS) {
     console.log(`Congratulations, ${userName}!`);
   } else {
     console.log(`Let's try again, ${userName}`);
