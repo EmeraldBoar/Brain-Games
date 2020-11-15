@@ -1,6 +1,6 @@
-import { getRandomNumber } from '../utils/random.js';
+import { getRandomNumber } from '../random.js';
 
-const calculateTheAnswer = (firstNumber, secondNumber) => {
+const gcd = (firstNumber, secondNumber) => {
   let firstNum = firstNumber;
   let secondNum = secondNumber;
   while (firstNum !== secondNum) {
@@ -10,7 +10,7 @@ const calculateTheAnswer = (firstNumber, secondNumber) => {
       firstNum -= secondNum;
     }
   }
-  return String(secondNum);
+  return secondNum;
 };
 
 const createRound = () => {
@@ -21,7 +21,7 @@ const createRound = () => {
 
   return {
     expression,
-    correctAnswer: calculateTheAnswer(firstNumber, secondNumber),
+    correctAnswer: String(gcd(firstNumber, secondNumber)),
   };
 };
 
