@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../random.js';
+import { getRandomNumber } from '../utils.js';
 
 const calculateTheAnswer = (randomNumber) => {
   const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';

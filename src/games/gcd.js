@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../random.js';
+import { getRandomNumber } from '../utils.js';
 
 const gcd = (firstNumber, secondNumber) => {
   let firstNum = firstNumber;
