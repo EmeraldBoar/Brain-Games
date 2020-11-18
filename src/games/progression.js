@@ -5,13 +5,13 @@ const createRound = () => {
   const MAX_STEP = 100;
   const QUANTITY = 10;
   const step = getRandomNumber(MIN_NUMBER, MAX_STEP);
-  let progressionElement = getRandomNumber();
+  const firstElement = getRandomNumber();
 
   const progression = [];
 
   for (let i = 0; i < QUANTITY; i += 1) {
-    progression.push(progressionElement);
-    progressionElement += step;
+    const nextElement = firstElement + step * i;
+    progression.push(nextElement);
   }
 
   const hiddenElementIndex = getRandomNumber(MIN_NUMBER, progression.length - 1);

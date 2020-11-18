@@ -1,15 +1,17 @@
 import { getRandomNumber } from '../utils.js';
 
-const calculateTheAnswer = (randomNumber) => {
-  const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
-  return correctAnswer;
+const isEven = (number) => {
+  if (number % 2 === 0) {
+    return true;
+  }
+  return false;
 };
 
 const createRound = () => {
-  const randomNum = getRandomNumber();
+  const randomNumber = getRandomNumber();
   return {
-    expression: randomNum,
-    correctAnswer: calculateTheAnswer(randomNum),
+    expression: randomNumber,
+    correctAnswer: isEven(randomNumber) ? 'yes' : 'no',
   };
 };
 

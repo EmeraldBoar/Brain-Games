@@ -9,7 +9,7 @@ const calculate = (operator, firstNumber, secondNumber) => {
     case '*':
       return String(firstNumber * secondNumber);
     default:
-      return '';
+      throw new Error(`Unknown operator ${operator}`);
   }
 };
 

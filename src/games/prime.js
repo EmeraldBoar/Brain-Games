@@ -14,19 +14,12 @@ const isPrime = (number) => {
   return true;
 };
 
-const calculateTheAnswer = (num) => {
-  const answer = isPrime(num) ? 'yes' : 'no';
-  return answer;
-};
-
 const createRound = () => {
   const randomNumber = getRandomNumber();
-
-  const result = {
+  return {
     expression: randomNumber,
-    correctAnswer: calculateTheAnswer(randomNumber),
+    correctAnswer: isPrime(randomNumber) ? 'yes' : 'no',
   };
-  return result;
 };
 
 const gameData = {
